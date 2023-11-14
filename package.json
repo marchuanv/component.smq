@@ -1,0 +1,31 @@
+{
+    "name": "smq",
+    "version": "1.0.0",
+    "author": "Marchuan Van Der Merwe",
+    "description": "small message queue",
+    "type": "module",
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/marchuanv/smq"
+    },
+    "engines": {
+        "npm": ">=8.1.2",
+        "node": ">=16.14.2"
+    },
+    "files": [
+        "lib"
+    ],
+    "main": "queue.mjs",
+    "scripts": {
+        "test": "node specs/index.mjs"
+    },
+    "keywords": [
+        "queue",
+        "message",
+        "small"
+    ],
+    "dependencies": {
+        "jasmine": "^5.1.0"
+    }
+}
