@@ -1,7 +1,10 @@
-import { Message, MessageFactory } from '../lib/registry.mjs';
+import { Message, MessageFactory, Stream } from '../lib/registry.mjs';
 const suite = describe('when receiving unicode characters over http given an acceptable total character length', () => {
     it('should utilize the message factory and create a message', () => {
-        const message = MessageFactory.create('Hello World');
+        const unicode = string_to_char_code('Hello World');
+
+        const stream = new Stream();
+        const message = MessageFactory.create(unicode);
         expect(message).toBeDefined();
         expect(message).not.toBeNull();
         expect(message).toBeInstanceOf(Message);
@@ -10,3 +13,10 @@ const suite = describe('when receiving unicode characters over http given an acc
     });
 });
 process.specs.set(suite, []);
+const string_to_char_code = ([...string]) => {
+    const array = string.map((char) => {
+        return char.charCodeAt(0);
+    });
+    // array of unicode
+    return array;
+}
