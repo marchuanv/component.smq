@@ -10,8 +10,8 @@
         "url": "http://github.com/marchuanv/smq"
     },
     "engines": {
-        "npm": ">=8.1.2",
-        "node": ">=16.14.2"
+        "node": "18.16.1",
+        "npm": "9.5.1"
     },
     "files": [
         "lib"
@@ -26,6 +26,8 @@
         "small"
     ],
     "dependencies": {
-        "jasmine": "^5.1.0"
+        "jasmine": "^5.1.0",
+        "component.communication": "marchuanv/component.communication",
+        "utils": "marchuanv/utils"
     }
 }
