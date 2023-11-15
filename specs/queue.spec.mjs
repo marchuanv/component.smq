@@ -3,7 +3,6 @@ const suite = fdescribe('when ', () => {
     it('should ', async () => {
         const connectionOptions = new ConnectionOptions(3, 10000, 'localhost', 8080, 'localhost', 8080);
         const connection = new Connection(connectionOptions);
-        await connection.open();
         const queue = new Queue(connection);
         const message = MessageFactory.create('Hello World');
         const responseMessage = await queue.enqueue(message);
