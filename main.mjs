@@ -1,6 +1,6 @@
-import {
+export {
     Connection,
-    ConnectionOptions
+    ConnectionOptions,
+    Queue
 } from './lib/registry.mjs';
-export { Connection, ConnectionOptions };
 
