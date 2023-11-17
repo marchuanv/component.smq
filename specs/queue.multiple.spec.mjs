@@ -1,8 +1,8 @@
-import { Connection, ConnectionOptions, MessageFactory, MessagePriority, Queue } from '../lib/registry.mjs';
-const suite = describe('when queuing multiple message', () => {
+import { Connection, MessageFactory, MessagePriority, Queue } from '../lib/registry.mjs';
+const suite = fdescribe('when queuing multiple message', () => {
     it('should sort the array by priority and message time', (done) => {
-        const connectionOptions = new ConnectionOptions(3, 10000, 'localhost', 8080, 'localhost', 8080);
-        const connection = new Connection(connectionOptions);
+
+        const connection = new Connection(process.connectionOptions);
 
         const queue = new Queue(connection);
 
@@ -20,7 +20,14 @@ const suite = describe('when queuing multiple message', () => {
         queue.enqueue(newMessage5);
         queue.enqueue(newMessage6);
 
-        const queuedMessages = [newMessage1, newMessage2, newMessage3, newMessage4, newMessage5, newMessage6];
+        const queuedMessages = [
+            newMessage1,
+            newMessage2,
+            newMessage3,
+            newMessage4,
+            newMessage5,
+            newMessage6
+        ];
 
         setTimeout(() => {
             expect(queue.count).toBe(6);

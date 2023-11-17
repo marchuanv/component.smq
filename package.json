@@ -16,7 +16,7 @@
     "files": [
         "lib"
     ],
-    "main": "queue.mjs",
+    "main": "main.mjs",
     "scripts": {
         "test": "node specs/index.mjs"
     },
