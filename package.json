@@ -1,5 +1,5 @@
 {
-    "name": "smq",
+    "name": "component.smq",
     "version": "1.0.0",
     "author": "Marchuan Van Der Merwe",
     "description": "small message queue",
