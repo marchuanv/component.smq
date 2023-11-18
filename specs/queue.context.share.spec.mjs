@@ -1,8 +1,9 @@
-import { Connection, MessageFactory, MessagePriority, Queue } from '../lib/registry.mjs';
+import { Connection, HttpConnection, MessageFactory, MessagePriority, Queue } from '../lib/registry.mjs';
 const suite = describe('when creating queues given shared connection', () => {
     it('should be in sync', (done) => {
 
-        const connection = new Connection(process.connectionOptions);
+        const httpConnection = new HttpConnection(process.connectionOptions);
+        const connection = new Connection(httpConnection);
 
         const queue1 = new Queue(connection);
         const queue2 = new Queue(connection);

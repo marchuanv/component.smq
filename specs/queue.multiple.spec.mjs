@@ -1,9 +1,10 @@
-import { Connection, MessageFactory, MessagePriority, Queue } from '../lib/registry.mjs';
+
+import { Connection, HttpConnection, MessageFactory, MessagePriority, Queue } from '../lib/registry.mjs';
 const suite = fdescribe('when queuing multiple message', () => {
     it('should sort the array by priority and message time', (done) => {
 
-        const connection = new Connection(process.connectionOptions);
-
+        const httpConnection = new HttpConnection(process.connectionOptions);
+        const connection = new Connection(httpConnection);
         const queue = new Queue(connection);
 
         const newMessage1 = MessageFactory.create('High Priority First', MessagePriority.High);
