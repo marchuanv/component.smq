@@ -1,6 +1,2 @@
-export {
-    Connection,
-    ConnectionOptions,
-    Queue
-} from './lib/registry.mjs';
+export { Queue as SmallMessageQueue } from './lib/registry.mjs';
 
