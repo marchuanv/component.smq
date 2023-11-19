@@ -1,5 +1,5 @@
-import { Connection, HttpConnection, MessageFactory, MessagePriority, Queue } from '../lib/registry.mjs';
-const suite = describe('when ', () => {
+import { Connection, HttpConnection, MessageFactory, MessagePriority, Queue } from '../registry.mjs';
+describe('when ', () => {
     it('should ', (done) => {
         const httpConnection = new HttpConnection(process.connectionOptions);
         const connection = new Connection(httpConnection);
@@ -16,4 +16,3 @@ const suite = describe('when ', () => {
         }, 1000);
     });
 });
-process.specs.set(suite, []);

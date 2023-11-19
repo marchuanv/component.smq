@@ -1,5 +1,5 @@
-import { Connection, HttpConnection, MessageFactory, MessagePriority, Queue } from '../lib/registry.mjs';
-const suite = describe('when creating queues given shared connection', () => {
+import { Connection, HttpConnection, MessageFactory, MessagePriority, Queue } from '../registry.mjs';
+describe('when creating queues given shared connection', () => {
     it('should be in sync', (done) => {
 
         const httpConnection = new HttpConnection(process.connectionOptions);
@@ -42,4 +42,3 @@ const suite = describe('when creating queues given shared connection', () => {
         }, 1000);
     });
 });
-process.specs.set(suite, []);

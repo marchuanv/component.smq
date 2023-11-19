@@ -1,6 +1,6 @@
 
-import { Connection, HttpConnection, MessageFactory, MessagePriority, Queue } from '../lib/registry.mjs';
-const suite = fdescribe('when queuing multiple message', () => {
+import { Connection, HttpConnection, MessageFactory, MessagePriority, Queue } from '../registry.mjs';
+describe('when queuing multiple message', () => {
     it('should sort the array by priority and message time', (done) => {
 
         const httpConnection = new HttpConnection(process.connectionOptions);
@@ -44,4 +44,3 @@ const suite = fdescribe('when queuing multiple message', () => {
         }, 1500);
     });
 });
-process.specs.set(suite, []);

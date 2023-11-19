@@ -5,6 +5,7 @@
     "description": "small message queue",
     "type": "module",
     "license": "UNLICENSED",
+    "main": "registry.mjs",
     "repository": {
         "type": "git",
         "url": "http://github.com/marchuanv/smq"
@@ -16,7 +17,6 @@
     "files": [
         "lib"
     ],
-    "main": "main.mjs",
     "scripts": {
         "test": "node specs/index.mjs"
     },
@@ -28,6 +28,7 @@
     "dependencies": {
         "jasmine": "^5.1.0",
         "component.communication": "marchuanv/component.communication",
+        "component.properties": "marchuanv/component.properties",
         "utils": "marchuanv/utils"
     }
 }
