@@ -1,11 +1,9 @@
 
-import { MessageFactory, MessagePriority, Queue } from '../registry.mjs';
+import { MessageFactory, MessagePriority } from '../registry.mjs';
 describe('when queuing multiple message', () => {
     it('should sort the array by priority and message time', (done) => {
 
-        const connection = process.connection;
-        
-        const queue = new Queue(connection);
+        const queue = process.queue;
 
         const newMessage1 = MessageFactory.create('High Priority First', MessagePriority.High);
         const newMessage2 = MessageFactory.create('High Priority Second', MessagePriority.High);
@@ -42,5 +40,6 @@ describe('when queuing multiple message', () => {
             }
             done();
         }, 1500);
+
     });
 });
