@@ -33,8 +33,10 @@ describe('when queuing multiple message', () => {
             while (queue.peek()) {
                 const message = queue.dequeue();
                 const expectedMessage = queuedMessages.shift();
-                expect(Number(message.headers.priority)).toBe(expectedMessage.headers.priority);
-                expect(Number(message.headers.time)).toBe(expectedMessage.headers.time);
+                expect(message.headers.priority).toBeInstanceOf(Number);
+                expect(message.headers.time).toBeInstanceOf(Number);
+                expect(message.headers.priority).toBe(expectedMessage.headers.priority);
+                expect(message.headers.time).toBeGreaterThan(expectedMessage.headers.time);
                 expect(message.body.Id).toBe(expectedMessage.body.Id);
                 expect(message.body.data).toBe(expectedMessage.body.data);
             }
