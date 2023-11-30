@@ -4,6 +4,7 @@ describe('when queuing multiple message', () => {
     it('should sort the array by priority and message time', (done) => {
 
         const queue = process.queue;
+        const queue = process.queue;
 
         const newMessage1 = MessageFactory.create('High Priority First', MessagePriority.High);
         const newMessage2 = MessageFactory.create('High Priority Second', MessagePriority.High);
@@ -33,12 +34,15 @@ describe('when queuing multiple message', () => {
             while (queue.peek()) {
                 const message = queue.dequeue();
                 const expectedMessage = queuedMessages.shift();
-                expect(Number(message.headers.priority)).toBe(expectedMessage.headers.priority);
-                expect(Number(message.headers.time)).toBe(expectedMessage.headers.time);
+                expect(message.headers.priority).toBeInstanceOf(Number);
+                expect(message.headers.time).toBeInstanceOf(Number);
+                expect(message.headers.priority).toBe(expectedMessage.headers.priority);
+                expect(message.headers.time).toBeGreaterThan(expectedMessage.headers.time);
                 expect(message.body.Id).toBe(expectedMessage.body.Id);
                 expect(message.body.data).toBe(expectedMessage.body.data);
             }
             done();
         }, 1500);
+
     });
 });
