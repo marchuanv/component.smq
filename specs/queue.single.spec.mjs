@@ -1,9 +1,7 @@
-import { Connection, HttpConnection, MessageFactory, MessagePriority, Queue } from '../registry.mjs';
+import { MessageFactory, MessagePriority, Queue } from '../registry.mjs';
 describe('when ', () => {
     it('should ', (done) => {
-        const httpConnection = new HttpConnection(process.connectionOptions);
-        const connection = new Connection(httpConnection);
-        const queue = new Queue(connection);
+        const queue = process.queue;
         const newMessage = MessageFactory.create('Hello World', MessagePriority.High);
         queue.enqueue(newMessage);
         setTimeout(() => {
