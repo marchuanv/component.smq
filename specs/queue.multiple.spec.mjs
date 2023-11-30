@@ -4,7 +4,6 @@ describe('when queuing multiple message', () => {
     it('should sort the array by priority and message time', (done) => {
 
         const queue = process.queue;
-        const queue = process.queue;
 
         const newMessage1 = MessageFactory.create('High Priority First', MessagePriority.High);
         const newMessage2 = MessageFactory.create('High Priority Second', MessagePriority.High);

@@ -2,7 +2,6 @@ import { MessageFactory, MessagePriority, Queue } from '../registry.mjs';
 describe('when ', () => {
     it('should ', (done) => {
         const queue = process.queue;
-        const queue = process.queue;
         const newMessage = MessageFactory.create('Hello World', MessagePriority.High);
         queue.enqueue(newMessage);
         setTimeout(() => {
